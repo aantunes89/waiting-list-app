@@ -1,0 +1,30 @@
+$component: ".priority-counter";
+
+#{$component} {
+  &__container {
+    width: 4.5rem;
+    height: 4.2rem;
+
+    border-radius: 0.5rem;
+
+    color: #fff;
+
+    font-family: Karla;
+    font-size: 4.3rem;
+    line-height: 3.6rem;
+    text-align: center;
+    font-weight: 400;
+
+    &--red {
+      background: rgba(248, 75, 75, 1);
+    }
+
+    &--green {
+      background: rgba(66, 192, 78, 1);
+    }
+
+    &--yellow {
+      background: rgba(236, 188, 29, 1);
+    }
+  }
+}

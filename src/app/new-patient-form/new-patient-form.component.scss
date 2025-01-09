@@ -1,0 +1,91 @@
+$component: ".new-patient-form";
+
+#{$component} {
+  &__container {
+    background: linear-gradient(180deg, #f7f7f7 0%, #f3f3f3 100%);
+    padding: 0.75rem 1.5rem;
+    padding-bottom: 2rem;
+    border-radius: 0.5rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 3rem;
+    text-align: left;
+    color: rgba(64, 64, 64, 1);
+  }
+
+  &__form {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+  }
+
+  &__patient-name-input {
+    height: 2.625rem;
+    padding-left: 0.5rem;
+
+    border: 1px;
+    border-radius: 0.5rem;
+    background: rgba(235, 235, 235, 1);
+
+    outline: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05) inset;
+
+    flex: 1;
+  }
+
+  &__priority-dropdown {
+    width: 14rem;
+    height: 2.625rem;
+    border-radius: 8px;
+    border: 1px;
+    padding: 0.5rem;
+
+    background: rgba(235, 235, 235, 1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05) inset;
+    outline: none;
+  }
+
+  &__priority-option {
+    font-family: Karla;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 2rem;
+    text-align: left;
+  }
+
+  &__priority-option-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+
+    &--red {
+      background: rgba(248, 75, 75, 1);
+    }
+
+    &--green {
+      background: rgba(66, 192, 78, 1);
+    }
+
+    &--yellow {
+      background: rgba(236, 188, 29, 1);
+    }
+  }
+
+  &__add-patient-button {
+    width: 218px;
+    height: 64px;
+    border-radius: 8px;
+
+    font-family: "Karla";
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 31.56px;
+
+    color: rgba(255, 255, 255, 1);
+    background: linear-gradient(180deg, #ecbe1d 0%, #ecb21d 100%);
+    box-shadow: 0px 0px 9px 0px rgba(156, 107, 11, 0.21);
+  }
+}

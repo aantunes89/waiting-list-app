@@ -1,0 +1,52 @@
+<section class="dashboard__container">
+  <app-new-patient-form></app-new-patient-form>
+
+  <section
+    class="dashboard__general-info"
+    *ngIf="patients$ | async as patients"
+  >
+    <app-info-card>
+      <div class="dashboard__patient-counter">
+        <p>Patient in Line</p>
+        <div class="dashboard__patient-counter__amount">
+          {{ patients.length }}
+        </div>
+      </div>
+    </app-info-card>
+
+    <app-info-card>
+      <div class="dashboard__patient-distribution" *ngIf="patients.length">
+        <p>Patient Distribution</p>
+
+        <div class="dashboard__priority-container">
+          <app-priority-counter
+            [ammount]="reds$ | async"
+            [priority]="'red'"
+          ></app-priority-counter>
+
+          <app-priority-counter
+            [ammount]="yellows$ | async"
+            [priority]="'yellow'"
+          ></app-priority-counter>
+
+          <app-priority-counter
+            [ammount]="greens$ | async"
+            [priority]="'green'"
+          ></app-priority-counter>
+        </div>
+      </div>
+    </app-info-card>
+
+    <app-info-card>
+      <div class="dashboard__clock">
+        <div *ngIf="patients.length" class="dashboard__waiting-time">
+          {{ waitingTime$ | async | date : "HH:mm:ss" }}
+        </div>
+      </div>
+    </app-info-card>
+  </section>
+
+  <ng-container *ngIf="patients$ | async">
+    <app-patient-list></app-patient-list>
+  </ng-container>
+</section>

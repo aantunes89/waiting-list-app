@@ -1,0 +1,7 @@
+<div class="flex justify-start gap-2 overflow-x-auto p-2">
+  <app-patient-card
+    *ngFor="let patient of patients$ | async; let i = index"
+    [patientInfo]="patient"
+    [isFirstInLine]="i === 0"
+  ></app-patient-card>
+</div>

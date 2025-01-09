@@ -1,0 +1,43 @@
+<section class="new-patient-form__container">
+  <h1 class="new-patient-form__title">Waiting List</h1>
+
+  <form
+    (ngSubmit)="onSubmit($event)"
+    [formGroup]="newPatientForm"
+    class="new-patient-form__form"
+  >
+    <input
+      type="text"
+      class="new-patient-form__patient-name-input"
+      placeholder="Patient Name"
+      formControlName="name"
+    />
+
+    <select
+      name="priority-dropdown"
+      class="new-patient-form__priority-dropdown"
+      formControlName="priority"
+    >
+      <option
+        class="new-patient-form__priority-option"
+        *ngFor="let option of priorityOptions"
+        [value]="option"
+      >
+        <span
+          [ngClass]="[
+            'new-patient-form__priority-option-dot',
+            'new-patient-form__priority-option-dot--' + option
+          ]"
+        ></span>
+        {{ option }}
+      </option>
+    </select>
+
+    <button
+      [disabled]="newPatientForm.invalid"
+      class="new-patient-form__add-patient-button"
+    >
+      Add Patient
+    </button>
+  </form>
+</section>

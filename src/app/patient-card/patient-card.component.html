@@ -1,0 +1,22 @@
+<div
+  [ngClass]="[
+    'patient-card__container',
+    'patient-card__container--' + patientInfo.priority
+  ]"
+  *ngIf="!!patientInfo"
+>
+  <div
+    class="absolute top-0 right-2 text-xs cursor-pointer"
+    (click)="onClose()"
+  >
+    x
+  </div>
+
+  <div *ngIf="isFirstInLine" class="patient-card__next-tag">Next</div>
+
+  <section class="patient-card__avatar"></section>
+  <section class="patient-card__patient-name">{{ patientInfo.name }}</section>
+  <section class="patient-card__patient-time">
+    {{ waitingTime$ | async | date : "HH:mm:ss" }}
+  </section>
+</div>

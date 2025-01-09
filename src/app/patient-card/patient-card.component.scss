@@ -1,0 +1,105 @@
+$component: ".patient-card";
+
+#{$component} {
+  &__container {
+    position: relative;
+    background: linear-gradient(180deg, #f5f5f5 0%, #f0f0f0 100%);
+    border-radius: 9px;
+    width: 217px;
+
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(223, 223, 223, 1);
+    box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  &__avatar {
+    width: 115px;
+    height: 115px;
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &::before,
+    &::after {
+      border-radius: 50%;
+      border: 3px solid #fff;
+    }
+
+    &::before {
+      content: "";
+      width: 33px;
+      height: 33px;
+    }
+
+    &::after {
+      content: "";
+      width: 53px;
+      height: 26.5px;
+      border-radius: 150px 150px 0 0;
+      border-bottom: transparent;
+    }
+  }
+
+  &__patient-time {
+    width: 99px;
+    height: 33px;
+    border-radius: 9px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__next-tag {
+    width: 57px;
+    height: 24px;
+    top: 6px;
+    left: -8px;
+    border-radius: 4px;
+    position: absolute;
+    text-align: center;
+  }
+
+  &__patient-time,
+  &__next-tag {
+    color: #fff;
+  }
+}
+
+// Colors
+
+#{$component}__container {
+  &--red {
+    #{$component}__next-tag,
+    #{$component}__patient-time,
+    #{$component}__avatar {
+      background: rgba(248, 75, 75, 1);
+    }
+  }
+
+  &--green {
+    #{$component}__next-tag,
+    #{$component}__patient-time,
+    #{$component}__avatar {
+      background: rgba(66, 192, 78, 1);
+    }
+  }
+
+  &--yellow {
+    #{$component}__next-tag,
+    #{$component}__patient-time,
+    #{$component}__avatar {
+      background: rgba(236, 188, 29, 1);
+    }
+  }
+}
